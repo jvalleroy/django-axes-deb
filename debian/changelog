@@ -1,0 +1,6 @@
+django-axes (2.3.3-1) unstable; urgency=low
+
+  [ Joseph Nuthalapati ]
+  * Initial package. (Closes: #874451)
+
+ -- FreedomBox packaging team <freedombox-pkg-team@lists.alioth.debian.org>  Wed, 06 Sep 2017 07:51:45 +0000

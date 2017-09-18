@@ -1,0 +1,25 @@
+Source: django-axes
+Maintainer: FreedomBox packaging team <freedombox-pkg-team@lists.alioth.debian.org>
+Uploaders:
+ Joseph Nuthalapati <njoseph@thoughtworks.com>
+Section: python
+Priority: optional
+Build-Depends:
+ python3-setuptools,
+ python3-all,
+ debhelper (>= 9),
+ dh-python
+Standards-Version: 4.0.0
+Homepage: https://github.com/jazzband/django-axes
+
+Package: python3-django-axes
+Architecture: all
+Depends:
+ ${misc:Depends},
+ ${python3:Depends},
+ python3-tz
+Description: Keep track of failed login attempts in Django-powered sites
+ django-axes is a very simple way for you to keep track of failed login
+ attempts, both for the Django admin and for the rest of your site.
+ .
+ To start using django-axes, just add "axes" to your INSTALLED_APPS.
