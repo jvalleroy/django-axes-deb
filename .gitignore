@@ -1,0 +1,9 @@
+django_axes.egg-info
+*.pyc
+build
+dist
+.hg
+.DS_Store
+docs/_build
+.tox/
+tox.ini
