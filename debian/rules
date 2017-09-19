@@ -1,15 +1,18 @@
 #!/usr/bin/make -f
 
 %:
-	dh $@ --with python3 --buildsystem=python_distutils
+	dh $@ --with sphinxdoc,python3 --buildsystem=pybuild
 
 override_dh_auto_clean:
-	python3 setup.py clean -a
-	find . -name \*.pyc -exec rm {} \;
+	dh_auto_clean
 
 override_dh_auto_build:
-	python3 setup.py build --force
+	python3 runtests.py
+	python3 setup.py build
+	export http_proxy=127.0.0.1:9
+	export https_proxy=127.0.0.1:9
+	PYTHONPATH=. sphinx-build -N -bhtml docs/ build/html # HTML generator
+	PYTHONPATH=. sphinx-build -N -bman docs/ build/man # Manpage generator
 
 override_dh_auto_install:
-	python3 setup.py install --force --root=debian/python3-django-axes --no-compile -O0 --install-layout=deb
-
+	python3 setup.py install --root=debian/python3-django-axes --no-compile -O0 --install-layout=deb

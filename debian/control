@@ -8,7 +8,11 @@ Build-Depends:
  python3-setuptools,
  python3-all,
  debhelper (>= 9),
- dh-python
+ dh-python,
+ python3-sphinx,
+ python3-django,
+ sphinx-doc,
+ python3-sphinx-rtd-theme
 Standards-Version: 4.0.0
 Homepage: https://github.com/jazzband/django-axes
 
@@ -23,3 +27,17 @@ Description: Keep track of failed login attempts in Django-powered sites
  attempts, both for the Django admin and for the rest of your site.
  .
  To start using django-axes, just add "axes" to your INSTALLED_APPS.
+
+Package: python3-django-axes-doc
+Section: doc
+Architecture: all
+Depends:
+ ${misc:Depends},
+ ${sphinxdoc:Depends}
+Description: Keep track of failed login attempts in Django-powered sites
+ django-axes is a very simple way for you to keep track of failed login
+ attempts, both for the Django admin and for the rest of your site.
+ .
+ To start using django-axes, just add "axes" to your INSTALLED_APPS.
+ .
+ This package contains the HTML documentation and examples.
