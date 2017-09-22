@@ -12,7 +12,8 @@ Build-Depends:
  python3-sphinx,
  python3-django,
  sphinx-doc,
- python3-sphinx-rtd-theme
+ python3-sphinx-rtd-theme,
+ python3-mock
 Standards-Version: 4.0.0
 Homepage: https://github.com/jazzband/django-axes
 
