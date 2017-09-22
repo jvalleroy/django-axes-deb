@@ -1,9 +1,12 @@
 #!/usr/bin/make -f
 
+export PYBUILD_NAME=django_axes
+
 %:
-	dh $@ --with sphinxdoc,python3 --buildsystem=pybuild
+	dh $@ --with=python3,sphinxdoc --buildsystem=pybuild
 
 override_dh_auto_clean:
+	rm -rf docs/.build
 	dh_auto_clean
 
 override_dh_auto_build:
@@ -11,8 +14,8 @@ override_dh_auto_build:
 	python3 setup.py build
 	export http_proxy=127.0.0.1:9
 	export https_proxy=127.0.0.1:9
-	PYTHONPATH=. sphinx-build -N -bhtml docs/ build/html # HTML generator
-	PYTHONPATH=. sphinx-build -N -bman docs/ build/man # Manpage generator
+	PYTHONPATH=. sphinx-build -b html -d docs/.build/.doctrees -N docs docs/.build/html
+	dh_auto_build
 
 override_dh_auto_install:
 	python3 setup.py install --root=debian/python3-django-axes --no-compile -O0 --install-layout=deb

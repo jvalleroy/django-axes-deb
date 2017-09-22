@@ -1,0 +1,9 @@
+Document: python-django-axes-doc
+Title: Django Axes Documentation
+Abstract: This is the documentation of Django Axes, which keeps track of failed
+ login attempts
+Section: Programming/Python
+
+Format: HTML
+Index: /usr/share/doc/python-django-axes-doc/html/index.html
+Files: /usr/share/doc/python-django-axes-doc/html/*.html
